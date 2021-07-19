@@ -32,6 +32,20 @@ $(function(){
     // Slideshow 끝
 
 
+    // 멀티탭(multiTab) 시작
+
+        // 탭버튼, 탭 콘텐츠 시작
+    $("#bbs button").click(function(){
+        $("#bbs button").removeClass("selected");
+        $(this).addClass("selected");
+
+        var dataLink = $(this).attr("data-link");
+        $("#bbs .tabContents").css({"display": "none"});
+        $("#" + dataLink).css({"display": "block"});
+    });
+        // 탭버튼, 탭 콘텐츠 끝
+
+    // 멀티탭(multiTab) 끝
 
 
 });
