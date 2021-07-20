@@ -37,17 +37,30 @@ ul {
 .flex-container {
   display: flex;
 }
+
+/* IE 구버전에서 동일한 결과 출력용 소스 시작 */
+header,
+nav,
+main,
+footer,
+section,
+article,
+aside {
+  display: block;
+}
+/* IE 구버전에서 동일한 결과 출력용 소스 끝 */
+
 /* Reset 끝 */
 
 /* div#wrap 시작 */
 div#wrap {
   width: 1200px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   margin: 0 auto;
 }
-div#wrap > * {
+/* div#wrap > * {
   border: 1px solid #000;
-}
+} */
 /* div#wrap 끝 */
 
 /* header#header  */
@@ -111,7 +124,7 @@ header#header {
 /* div#slide */
 div#slide {
   height: 300px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 
   overflow: hidden;
 }
@@ -143,19 +156,21 @@ div#slide {
 /* div#slide */
 
 /* div#contents */
+
 div#contents {
   height: 200px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 
 #contents > div {
   padding: 4px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   margin: 4px;
 
   flex: 1;
 }
 
+/* div#bbs 시작 */
 #contents div#bbs button {
   font-size: 18px;
   font-weight: bold;
@@ -179,9 +194,13 @@ div#contents {
 #contents #bbs div.tabContents {
   border: 1px solid #aaa;
 }
-
+/* 
 #contents #bbs div#bbsNotice {
-  /* display: none; */
+  display: none;
+} */
+
+#contents #bbs div#bbsNotice td {
+  padding-left: 6px;
 }
 
 #contents #bbs div#bbsGallery {
@@ -197,14 +216,94 @@ div#contents {
   height: 148px;
   /* border: 1px solid #08f; */
 }
-#contents #bbs table td {
-  /* border: 1px solid #08f; */
+
+/* #contents #bbs table td {
+  border: 1px solid #08f;
+} */
+
+/* div#bbs 끝 */
+
+/* div#banner, div#shortcut 시작 */
+div#banner,
+div#shortcut {
+  text-align: center;
 }
+/* div#banner, div#shortcut 끝 */
+
 /* div#contents */
 
 /* footer#footer */
 footer#footer {
   height: 100px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
+
+#footer > div {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  /* border: 1px solid #000; */
+}
+
+#footer div#footerLogo,
+#footer div#snsArea {
+  width: 200px;
+}
+
+#footer div#copyright {
+  font-size: 20px;
+
+  flex: 1;
+}
+
 /* footer#footer */
+
+/* 레이어팝업(LayerPopup) 시작 */
+tr#popupPoint {
+  cursor: pointer;
+}
+
+div#layerBG {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0);
+
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+div#layerPopup {
+  padding: 20px 60px;
+  border: 4px solid #aaa;
+  border-radius: 10px;
+  background-color: #fff;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#layerBG h1 {
+  margin: 20px;
+}
+#layerBG p {
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+#closeBtnArea {
+  text-align: right;
+  margin: 20px 20px 10px;
+}
+#layerBG button {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 2px 20px;
+
+  cursor: pointer;
+}
+
+/* 레이어팝업(LayerPopup) 끝 */
